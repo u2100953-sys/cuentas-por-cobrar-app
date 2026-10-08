@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control de Cuentas por Cobrar</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Gestión financiera</p>
+          <h1>Cuentas por Cobrar</h1>
+        </div>
+      </header>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="panel">
+        <h2>Registrar factura</h2>
+        <form id="invoice-form">
+          <div class="grid">
+            <label>
+              Número de factura
+              <input type="text" name="invoice_number" required />
+            </label>
+
+            <label>
+              Cliente
+              <input type="text" name="customer_name" required />
+            </label>
+
+            <label>
+              NIT / documento
+              <input type="text" name="document_number" required />
+            </label>
+
+            <label>
+              Monto
+              <input type="number" name="amount" min="0" step="0.01" required />
+            </label>
+
+            <label>
+              Fecha de factura
+              <input type="date" name="invoice_date" required />
+            </label>
+
+            <label>
+              Fecha de vencimiento
+              <input type="date" name="due_date" required />
+            </label>
+          </div>
+
+          <label class="full-width">
+            Observación de revisión
+            <textarea name="review_notes" rows="3" placeholder="Detalle de la revisión o situación de la cuenta"></textarea>
+          </label>
+
+          <button type="submit" class="primary-btn">Guardar factura</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Facturas por revisar y radicar</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Factura</th>
+                <th>Cliente</th>
+                <th>Monto</th>
+                <th>Vence</th>
+                <th>Estado</th>
+                <th>Radicado</th>
+                <th>Observación</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="receivables-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel treasury-panel">
+        <h2>Tesorería</h2>
+        <p class="info-text">Estas facturas ya fueron radicadas y esperan el registro del pago con recibo de caja.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Factura</th>
+                <th>Cliente</th>
+                <th>Radicado</th>
+                <th>Monto</th>
+                <th>N° recibo de caja</th>
+                <th>Fecha recibo</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="treasury-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

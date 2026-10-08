@@ -1,0 +1,14 @@
+{
+  "name": "cuentas-por-cobrar-app",
+  "version": "1.0.0",
+  "description": "Aplicación para revisar y radicar cuentas por cobrar con flujo de tesorería",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "express": "^4.19.2"
+  }
+}
